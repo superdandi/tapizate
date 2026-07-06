@@ -1,16 +1,16 @@
 const tapices = [
-    { img: 'img/tapiz-1.jpg', nombre: 'Tapiz Mandala' },
-    { img: 'img/tapiz-2.jpg', nombre: 'Tapiz Elefante' },
-    { img: 'img/tapiz-3.jpg', nombre: 'Tapiz Loto' },
-    { img: 'img/tapiz-4.jpg', nombre: 'Tapiz Paisley' },
-    { img: 'img/tapiz-5.jpg', nombre: 'Tapiz Geométrico' },
-    { img: 'img/tapiz-6.jpg', nombre: 'Tapiz Floral' },
-    { img: 'img/tapiz-7.jpg', nombre: 'Tapiz Sol' },
-    { img: 'img/tapiz-8.jpg', nombre: 'Tapiz Árbol de la Vida' },
-    { img: 'img/tapiz-9.jpg', nombre: 'Tapiz Caleidoscopio' },
-    { img: 'img/tapiz-10.jpg', nombre: 'Tapiz Tradicional' },
-    { img: 'img/tapiz-11.jpg', nombre: 'TapizMeditación' },
-    { img: 'img/tapiz-12.jpg', nombre: 'Tapiz Estrella' },
+    { img: 'img/tapiz-1.jpg', nombre: 'Mandala Sol' },
+    { img: 'img/tapiz-2.jpg', nombre: 'Mandala Energía' },
+    { img: 'img/tapiz-3.jpg', nombre: 'Mandala Om' },
+    { img: 'img/tapiz-4.jpg', nombre: 'Cosmos' },
+    { img: 'img/tapiz-5.jpg', nombre: 'Ganesha' },
+    { img: 'img/tapiz-6.jpg', nombre: 'Loto' },
+    { img: 'img/tapiz-7.jpg', nombre: 'Paisley' },
+    { img: 'img/tapiz-8.jpg', nombre: 'Geométrico' },
+    { img: 'img/tapiz-9.jpg', nombre: 'Árbol de la Vida' },
+    { img: 'img/tapiz-10.jpg', nombre: 'Caleidoscopio' },
+    { img: 'img/tapiz-11.jpg', nombre: 'Estrella' },
+    { img: 'img/tapiz-12.jpg', nombre: 'Tradicional' },
 ];
 
 const PRECIO = 20000;
@@ -30,7 +30,7 @@ function renderGallery() {
             <div class="gallery-info">
                 <h3>${tapiz.nombre}</h3>
                 <p>${formatearPrecio(PRECIO)}</p>
-                <a href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hola Tapizate, quiero comprar el ' + tapiz.nombre)}" target="_blank" rel="noopener" class="buy-link">
+                <a href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hola Tapizate, quiero comprar el tapiz ' + tapiz.nombre)}" target="_blank" rel="noopener" class="buy-link">
                     <i class="fab fa-whatsapp"></i> Comprar
                 </a>
             </div>
@@ -55,7 +55,7 @@ function openLightbox(index) {
     lb.innerHTML = `
         <button class="lightbox-close">&times;</button>
         <img src="${tapiz.img}" alt="${tapiz.nombre}">
-        <a href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hola Tapizate, quiero comprar el ' + tapiz.nombre)}" target="_blank" rel="noopener" class="lightbox-buy">
+        <a href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hola Tapizate, quiero comprar el tapiz ' + tapiz.nombre)}" target="_blank" rel="noopener" class="lightbox-buy">
             <i class="fab fa-whatsapp"></i> Comprar ${tapiz.nombre} — ${formatearPrecio(PRECIO)}
         </a>
     `;

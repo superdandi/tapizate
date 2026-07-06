@@ -274,6 +274,186 @@ body {
     font-size: 1rem;
 }
 
+/* Hero tagline */
+.hero-tagline {
+    font-family: var(--font-display);
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    color: var(--color-primary);
+    margin-top: 40px;
+    font-style: italic;
+    opacity: 0.85;
+}
+
+/* Story */
+.story {
+    padding: 100px 0;
+    background: var(--color-white);
+}
+
+.story-content {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.story-content p {
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+    line-height: 1.9;
+    margin-bottom: 24px;
+}
+
+.story-content p:first-child {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+/* Experience */
+.experience {
+    padding: 100px 0;
+    background: var(--color-bg-alt);
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 24px;
+    margin-top: 16px;
+}
+
+.exp-item {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    padding: 32px 20px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.exp-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.exp-icon {
+    font-size: 2.2rem;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.exp-item h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: var(--color-text);
+}
+
+.exp-item p {
+    color: var(--color-text-light);
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+/* Box section */
+.box-section {
+    padding: 100px 0;
+    background: var(--color-white);
+}
+
+.box-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.box-text p {
+    color: var(--color-text-light);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.box-philosophy {
+    font-family: var(--font-display);
+    font-size: 1.15rem !important;
+    color: var(--color-primary) !important;
+    font-style: italic;
+    margin-top: 8px;
+}
+
+.box-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-placeholder {
+    width: 100%;
+    aspect-ratio: 1;
+    max-width: 360px;
+    background: var(--color-bg-alt);
+    border-radius: var(--radius);
+    border: 2px dashed var(--color-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    color: var(--color-text-light);
+}
+
+.box-placeholder i {
+    font-size: 3.5rem;
+    color: var(--color-primary);
+}
+
+.box-placeholder span {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+}
+
+/* Installation */
+.installation {
+    padding: 100px 0;
+    background: var(--color-bg);
+}
+
+.install-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 16px;
+}
+
+.install-step {
+    text-align: center;
+    padding: 32px 16px;
+}
+
+.step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.install-step p {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
 /* About */
 .about {
     padding: 100px 0;
@@ -402,7 +582,7 @@ body {
 
 .shipping-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 32px;
     margin-top: 16px;
 }
@@ -479,6 +659,23 @@ body {
 .footer-tagline {
     font-size: 0.9rem;
     margin-bottom: 20px;
+}
+
+.footer-tagline-main {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--color-secondary);
+    margin-bottom: 8px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+}
+
+.footer-thanks {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    color: rgba(255,255,255,0.6);
 }
 
 .footer-links {
@@ -625,12 +822,39 @@ body {
     }
 
     .about-features,
-    .shipping-grid {
+    .shipping-grid,
+    .install-steps {
         grid-template-columns: 1fr;
+    }
+
+    .experience-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .box-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .box-text .section-title {
+        text-align: center !important;
     }
 
     .gallery {
         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+
+    .install-step {
+        padding: 16px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        text-align: left;
+    }
+
+    .step-num {
+        margin-bottom: 0;
+        flex-shrink: 0;
     }
 
     .hero {
