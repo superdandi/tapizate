@@ -1,16 +1,13 @@
 const tapices = [
-    { img: 'img/tapiz-1.jpg', nombre: 'Mandala Sol' },
-    { img: 'img/tapiz-2.jpg', nombre: 'Mandala Energía' },
-    { img: 'img/tapiz-3.jpg', nombre: 'Mandala Om' },
-    { img: 'img/tapiz-4.jpg', nombre: 'Cosmos' },
-    { img: 'img/tapiz-5.jpg', nombre: 'Ganesha' },
-    { img: 'img/tapiz-6.jpg', nombre: 'Loto' },
-    { img: 'img/tapiz-7.jpg', nombre: 'Paisley' },
-    { img: 'img/tapiz-8.jpg', nombre: 'Geométrico' },
-    { img: 'img/tapiz-9.jpg', nombre: 'Árbol de la Vida' },
-    { img: 'img/tapiz-10.jpg', nombre: 'Caleidoscopio' },
-    { img: 'img/tapiz-11.jpg', nombre: 'Estrella' },
-    { img: 'img/tapiz-12.jpg', nombre: 'Tradicional' },
+    { img: 'img/mandala_4876.jpg', nombre: 'Mandala Aura' },
+    { img: 'img/mandala_4877.jpg', nombre: 'Mandala Ohm' },
+    { img: 'img/mandala_4878.jpg', nombre: 'Mandala Energía' },
+    { img: 'img/mandala_4879.jpg', nombre: 'Mandala Sol' },
+    { img: 'img/mandala_4880.jpg', nombre: 'Mandala Elefante' },
+    { img: 'img/mandala_4881.jpg', nombre: 'Mandala Gaja' },
+    { img: 'img/mandala_4882.jpg', nombre: 'Mandala Cosmos' },
+    { img: 'img/mandala_4883.jpg', nombre: 'Mandala Cosmos' },
+    { img: 'img/mandala ganesha.jpg', nombre: 'Mandala Ganesha' },
 ];
 
 const PRECIO = 20000;

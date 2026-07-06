@@ -390,29 +390,36 @@ body {
     justify-content: center;
 }
 
-.box-placeholder {
+.box-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
     width: 100%;
-    aspect-ratio: 1;
-    max-width: 360px;
-    background: var(--color-bg-alt);
+    max-width: 440px;
+}
+
+.box-gallery img {
+    width: 100%;
     border-radius: var(--radius);
-    border: 2px dashed var(--color-secondary);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    color: var(--color-text-light);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
 }
 
-.box-placeholder i {
-    font-size: 3.5rem;
-    color: var(--color-primary);
+.box-gallery img:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-md);
 }
 
-.box-placeholder span {
-    font-family: var(--font-display);
-    font-size: 1.1rem;
+.experience-foot {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.experience-foot img {
+    max-width: 480px;
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
 }
 
 /* Installation */
@@ -572,6 +579,27 @@ body {
 
 .gallery-info .buy-link:hover {
     background: #20BD5A;
+}
+
+.install-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 48px;
+}
+
+.install-gallery img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.install-gallery img:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-md);
 }
 
 /* Shipping */
@@ -855,6 +883,14 @@ body {
     .step-num {
         margin-bottom: 0;
         flex-shrink: 0;
+    }
+
+    .install-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .box-gallery {
+        max-width: 100%;
     }
 
     .hero {
