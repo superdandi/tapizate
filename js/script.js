@@ -7,7 +7,7 @@ const tapices = [
     { img: 'img/mandala_4881.jpg', nombre: 'Mandala Gaja' },
     { img: 'img/mandala_4882.jpg', nombre: 'Mandala Cosmos' },
     { img: 'img/mandala_4883.jpg', nombre: 'Mandala Cosmos' },
-    { img: 'img/mandala ganesha.jpg', nombre: 'Mandala Ganesha' },
+    { img: 'img/mandala-ganesha.jpg', nombre: 'Mandala Ganesha' },
 ];
 
 const PRECIO = 20000;
