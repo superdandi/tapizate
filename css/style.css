@@ -419,9 +419,10 @@ body {
 
 .thanks-symbol {
     display: block;
-    font-size: 1.8rem;
-    color: var(--color-primary);
-    margin-bottom: 12px;
+    width: 48px;
+    height: auto;
+    margin: 0 auto 16px;
+    opacity: 0.8;
 }
 
 .experience-thanks p {
