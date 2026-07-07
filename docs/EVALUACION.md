@@ -45,6 +45,10 @@
 
 ### 5. Sin dimensiones de los tapices → ✅ RESUELTO
 
+### 6. Sin stock visible
+- ~~No hay indicación de disponibilidad. El usuario no sabe si el diseño está disponible.~~
+- ✅ **Hecho**: inventario.json con stock por diseño. Semáforo visual en cards y lightbox: verde (stock > 3), naranjo (1–3), rojo (agotado con botón deshabilitado).
+
 ### 6. Fotos lifestyle separadas del catálogo
 - Las fotos de tapices colgados están solo en la galería de instalación.
 - Ideal: cada diseño del catálogo debería tener su propia foto lifestyle.
@@ -108,7 +112,8 @@ No se está vendiendo "tapices", se está vendiendo "transformar tu espacio por 
 2. ~~Agregar dimensiones~~ ✅
 3. ~~Badge "Más vendido" en Ganesha~~ ✅
 4. ~~Rediseñar separadores entre secciones~~ ✅
-5. **Testimonios / validación social** — siguiente mejora grande
-6. **Fotos lifestyle por diseño** — mediano plazo
-7. **FAQ** — descartado por ahora
-8. **Google Analytics o Meta Pixel** — medir qué diseños interesan más
+5. ~~Inventario con semáforo visual~~ ✅
+6. **Testimonios / validación social** — siguiente mejora grande
+7. **Fotos lifestyle por diseño** — mediano plazo
+8. **FAQ** — descartado por ahora
+9. **Google Analytics o Meta Pixel** — medir qué diseños interesan más
