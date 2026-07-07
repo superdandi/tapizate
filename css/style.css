@@ -409,16 +409,26 @@ body {
     box-shadow: var(--shadow-md);
 }
 
-.experience-foot {
+.experience-thanks {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 48px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.experience-foot img {
-    max-width: 480px;
-    width: 100%;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
+.thanks-symbol {
+    display: block;
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+}
+
+.experience-thanks p {
+    color: var(--color-text-light);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    font-style: italic;
 }
 
 /* Installation */
