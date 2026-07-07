@@ -296,74 +296,34 @@ body {
     opacity: 0.85;
 }
 
-/* Section divider - banda decorativa geométrica */
-.section-divider {
-    height: 28px;
-    position: relative;
-    background: var(--color-bg);
-}
-
-.section-divider::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-        repeating-linear-gradient(90deg, transparent 0, transparent 10px, var(--color-primary) 10px, var(--color-primary) 12px),
-        repeating-linear-gradient(0deg, transparent 0, transparent 10px, var(--color-primary) 10px, var(--color-primary) 12px);
-    background-size: 12px 12px;
-    opacity: 0.12;
-}
-
-.section-divider--alt::before {
-    background:
-        repeating-linear-gradient(90deg, transparent 0, transparent 10px, var(--color-primary) 10px, var(--color-primary) 12px),
-        repeating-linear-gradient(0deg, transparent 0, transparent 10px, var(--color-primary) 10px, var(--color-primary) 12px);
-    background-size: 12px 12px;
-    opacity: 0.12;
-}
-
-.section-divider--white::before {
-    background:
-        repeating-linear-gradient(90deg, transparent 0, transparent 10px, var(--color-primary) 10px, var(--color-primary) 12px),
-        repeating-linear-gradient(0deg, transparent 0, transparent 10px, var(--color-primary) 10px, var(--color-primary) 12px);
-    background-size: 12px 12px;
-    opacity: 0.12;
-}
-
-/* Pattern overlay - textura geométrica textil india */
-.section--pattern {
+/* Section top decoration — línea + nudo perenne */
+.section--decorated {
     position: relative;
 }
 
-.section--pattern::before {
+.section--decorated::before {
     content: '';
     position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    background-image:
-        /* Diamond principal */
-        linear-gradient(45deg, transparent 46%, var(--color-primary) 46%, var(--color-primary) 54%, transparent 54%),
-        linear-gradient(-45deg, transparent 46%, var(--color-primary) 46%, var(--color-primary) 54%, transparent 54%),
-        /* Diamond secundario (interior) */
-        linear-gradient(45deg, transparent 47%, var(--color-secondary) 47%, var(--color-secondary) 53%, transparent 53%),
-        linear-gradient(-45deg, transparent 47%, var(--color-secondary) 47%, var(--color-secondary) 53%, transparent 53%),
-        /* Puntos en las esquinas */
-        radial-gradient(circle at 50% 50%, var(--color-primary) 1.5px, transparent 1.5px),
-        radial-gradient(circle at 50% 50%, var(--color-primary) 1px, transparent 1px),
-        /* Bindi central */
-        radial-gradient(circle at 50% 50%, var(--color-secondary) 2px, transparent 2px);
-    background-size:
-        60px 60px, 60px 60px,
-        60px 60px, 60px 60px,
-        60px 60px, 60px 60px,
-        60px 60px;
-    background-position:
-        0 0, 30px 0,
-        0 0, 30px 0,
-        30px 30px, 0 0,
-        30px 30px;
-    opacity: 0.08;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    max-width: 240px;
+    height: 1px;
+    background: var(--color-primary);
+    opacity: 0.12;
+}
+
+.section--decorated::after {
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    background: url('../img/logo-small.png') center/contain no-repeat;
+    opacity: 0.22;
 }
 
 /* Story */
