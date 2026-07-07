@@ -10,6 +10,7 @@ const tapices = [
 ];
 
 const PRECIO = 20000;
+const MEDIDAS = '~2,10 × 2,25 m';
 const WHATSAPP = '56982864145';
 
 function formatearPrecio(valor) {
@@ -22,10 +23,14 @@ function renderGallery() {
 
     gallery.innerHTML = tapices.map((tapiz, index) => `
         <div class="gallery-item" data-index="${index}">
-            <img src="${tapiz.img}" alt="${tapiz.nombre}" loading="lazy">
+            <div class="gallery-img-wrap">
+                ${index === 0 ? '<span class="badge-bestseller">Más vendido</span>' : ''}
+                <img src="${tapiz.img}" alt="${tapiz.nombre}" loading="lazy">
+            </div>
             <div class="gallery-info">
                 <h3>${tapiz.nombre}</h3>
                 <p class="gallery-desc">${tapiz.desc}</p>
+                <p class="gallery-size">${MEDIDAS}</p>
                 <p class="gallery-price">${formatearPrecio(PRECIO)}</p>
                 <a href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hola Tapizate, quiero comprar el tapiz ' + tapiz.nombre)}" target="_blank" rel="noopener" class="buy-link">
                     <i class="fab fa-whatsapp"></i> Comprar
@@ -56,6 +61,7 @@ function openLightbox(index) {
             <div class="lightbox-info">
                 <h3>${tapiz.nombre}</h3>
                 <p class="lightbox-desc">${tapiz.desc}</p>
+                <p class="lightbox-size">${MEDIDAS}</p>
                 <p class="lightbox-price">${formatearPrecio(PRECIO)}</p>
                 <a href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hola Tapizate, quiero comprar el tapiz ' + tapiz.nombre)}" target="_blank" rel="noopener" class="lightbox-buy">
                     <i class="fab fa-whatsapp"></i> Comprar

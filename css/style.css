@@ -581,6 +581,26 @@ body {
     gap: 24px;
 }
 
+.gallery-img-wrap {
+    position: relative;
+}
+
+.badge-bestseller {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    background: var(--color-secondary);
+    color: var(--color-text);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
 .gallery-item {
     background: var(--color-white);
     border-radius: var(--radius);
@@ -618,6 +638,16 @@ body {
     font-size: 0.85rem;
     line-height: 1.5;
     margin-bottom: 8px;
+}
+
+.gallery-size {
+    color: var(--color-text-light);
+    font-size: 0.78rem;
+    margin-bottom: 6px;
+}
+
+.gallery-size::before {
+    content: '📏 ';
 }
 
 .gallery-price {
@@ -882,6 +912,16 @@ body {
     font-size: 0.95rem;
     line-height: 1.7;
     margin-bottom: 16px;
+}
+
+.lightbox-size {
+    color: var(--color-text-light);
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+
+.lightbox-size::before {
+    content: '📏 ';
 }
 
 .lightbox-price {
