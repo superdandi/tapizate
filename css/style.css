@@ -296,6 +296,59 @@ body {
     opacity: 0.85;
 }
 
+/* Section divider */
+.section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 0 24px;
+    height: 48px;
+    background: var(--color-bg);
+}
+
+.section-divider--alt {
+    background: var(--color-bg-alt);
+}
+
+.section-divider--white {
+    background: var(--color-white);
+}
+
+.section-divider .divider-line {
+    flex: 1;
+    max-width: 120px;
+    height: 1px;
+    background: var(--color-primary);
+    opacity: 0.15;
+}
+
+.section-divider img {
+    width: 20px;
+    height: auto;
+    opacity: 0.3;
+}
+
+/* Pattern overlay */
+.section--pattern {
+    position: relative;
+}
+
+.section--pattern::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(45deg, var(--color-primary) 1px, transparent 1px),
+        linear-gradient(-45deg, var(--color-primary) 1px, transparent 1px),
+        radial-gradient(circle at 50% 50%, var(--color-secondary) 1.5px, transparent 1.5px);
+    background-size: 50px 50px, 50px 50px, 50px 50px;
+    background-position: 0 0, 25px 0, 25px 25px;
+    opacity: 0.04;
+}
+
 /* Story */
 .story {
     padding: 100px 0;
