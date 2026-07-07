@@ -1,12 +1,12 @@
 const tapices = [
-    { img: 'img/mandala_4876.jpg', nombre: 'Mandala Aura' },
-    { img: 'img/mandala_4877.jpg', nombre: 'Mandala Ohm' },
-    { img: 'img/mandala_4878.jpg', nombre: 'Mandala Energía' },
-    { img: 'img/mandala_4879.jpg', nombre: 'Mandala Sol' },
-    { img: 'img/mandala_4880.jpg', nombre: 'Mandala Elefante' },
-    { img: 'img/mandala_4881.jpg', nombre: 'Mandala Gaja' },
-    { img: 'img/mandala_4883.jpg', nombre: 'Mandala Cosmos' },
-    { img: 'img/mandala-ganesha.jpg', nombre: 'Mandala Ganesha' },
+    { img: 'img/mandala-ganesha.jpg', nombre: 'Mandala Ganesha', desc: 'Nuestro diseño favorito. Un símbolo de prosperidad, sabiduría y nuevos comienzos ✨ el más elegido para transformar hogares.' },
+    { img: 'img/mandala_4876.jpg', nombre: 'Mandala Aura', desc: 'Un diseño que transmite calma, equilibrio y conexión 🌿 perfecto para transformar cualquier espacio en un rincón de paz.' },
+    { img: 'img/mandala_4883.jpg', nombre: 'Mandala Cosmos', desc: 'Profundo, intenso y lleno de energía ✨ ideal para espacios con personalidad.' },
+    { img: 'img/mandala_4877.jpg', nombre: 'Mandala Ohm', desc: 'Un diseño con energía espiritual y vibración especial ✨ perfecto para meditación o espacios de conexión interior.' },
+    { img: 'img/mandala_4878.jpg', nombre: 'Mandala Energía', desc: 'Color, movimiento y vida en un solo diseño ✨ ideal para levantar cualquier espacio.' },
+    { img: 'img/mandala_4879.jpg', nombre: 'Mandala Sol', desc: 'Un diseño que irradia luz, calidez y buena vibra ✨ perfecto para darle vida a tu hogar.' },
+    { img: 'img/mandala_4880.jpg', nombre: 'Mandala Elefante', desc: 'Un diseño que representa sabiduría, fuerza y buena fortuna ✨ ideal para espacios que buscan protección y estabilidad.' },
+    { img: 'img/mandala_4881.jpg', nombre: 'Mandala Gaja', desc: 'Un diseño que evoca la nobleza y majestuosidad del elefante sagrado ✨ perfecto para quienes buscan un símbolo de poder y equilibrio.' },
 ];
 
 const PRECIO = 20000;
@@ -25,7 +25,8 @@ function renderGallery() {
             <img src="${tapiz.img}" alt="${tapiz.nombre}" loading="lazy">
             <div class="gallery-info">
                 <h3>${tapiz.nombre}</h3>
-                <p>${formatearPrecio(PRECIO)}</p>
+                <p class="gallery-desc">${tapiz.desc}</p>
+                <p class="gallery-price">${formatearPrecio(PRECIO)}</p>
                 <a href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hola Tapizate, quiero comprar el tapiz ' + tapiz.nombre)}" target="_blank" rel="noopener" class="buy-link">
                     <i class="fab fa-whatsapp"></i> Comprar
                 </a>
@@ -50,10 +51,17 @@ function openLightbox(index) {
     lb.className = 'lightbox active';
     lb.innerHTML = `
         <button class="lightbox-close">&times;</button>
-        <img src="${tapiz.img}" alt="${tapiz.nombre}">
-        <a href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hola Tapizate, quiero comprar el tapiz ' + tapiz.nombre)}" target="_blank" rel="noopener" class="lightbox-buy">
-            <i class="fab fa-whatsapp"></i> Comprar ${tapiz.nombre} — ${formatearPrecio(PRECIO)}
-        </a>
+        <div class="lightbox-content">
+            <img src="${tapiz.img}" alt="${tapiz.nombre}">
+            <div class="lightbox-info">
+                <h3>${tapiz.nombre}</h3>
+                <p class="lightbox-desc">${tapiz.desc}</p>
+                <p class="lightbox-price">${formatearPrecio(PRECIO)}</p>
+                <a href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hola Tapizate, quiero comprar el tapiz ' + tapiz.nombre)}" target="_blank" rel="noopener" class="lightbox-buy">
+                    <i class="fab fa-whatsapp"></i> Comprar
+                </a>
+            </div>
+        </div>
     `;
 
     document.body.appendChild(lb);
