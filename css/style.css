@@ -265,6 +265,10 @@ body {
     color: var(--color-text);
 }
 
+.section-title--left {
+    text-align: left;
+}
+
 .section-sub {
     text-align: center;
     color: var(--color-text-light);
@@ -392,9 +396,9 @@ body {
 .box-gallery {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    gap: 16px;
     width: 100%;
-    max-width: 440px;
+    max-width: 640px;
 }
 
 .box-gallery img {
@@ -402,6 +406,7 @@ body {
     border-radius: var(--radius);
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
+    cursor: pointer;
 }
 
 .box-gallery img:hover {
@@ -874,8 +879,8 @@ body {
         gap: 40px;
     }
 
-    .box-text .section-title {
-        text-align: center !important;
+    .section-title--left {
+        text-align: center;
     }
 
     .gallery {
