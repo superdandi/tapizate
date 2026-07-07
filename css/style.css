@@ -296,7 +296,7 @@ body {
     opacity: 0.85;
 }
 
-/* Section top decoration — línea + nudo perenne */
+/* Section top decoration — nudo perenne */
 .section--decorated {
     position: relative;
 }
@@ -307,23 +307,11 @@ body {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 50%;
-    max-width: 240px;
-    height: 1px;
-    background: var(--color-primary);
-    opacity: 0.12;
-}
-
-.section--decorated::after {
-    content: '';
-    position: absolute;
-    top: -7px;
-    left: 50%;
-    transform: translateX(-50%);
     width: 16px;
     height: 16px;
     background: url('../img/logo-small.png') center/contain no-repeat;
-    opacity: 0.22;
+    opacity: 0.2;
+    pointer-events: none;
 }
 
 /* Story */
