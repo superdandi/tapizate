@@ -304,13 +304,13 @@ body {
 .section--decorated::before {
     content: '';
     position: absolute;
-    top: 0;
+    top: -7px;
     left: 50%;
     transform: translateX(-50%);
     width: 16px;
     height: 16px;
     background: url('../img/logo-small.png') center/contain no-repeat;
-    opacity: 0.2;
+    opacity: 0.22;
     pointer-events: none;
 }
 
