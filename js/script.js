@@ -12,19 +12,34 @@ const tapices = [
 const PRECIO = 20000;
 const MEDIDAS = '~2,10 × 2,25 m';
 const WHATSAPP = '56982864145';
+let inventario = new Map();
 
 function formatearPrecio(valor) {
     return '$' + valor.toLocaleString('es-CL') + ' CLP';
+}
+
+function getStockInfo(nombre) {
+    const stock = inventario.get(nombre);
+    if (stock === undefined) return null;
+    if (stock === 0) return { text: 'Agotado', cls: 'out' };
+    if (stock <= 3) return stock === 1
+        ? { text: '¡Última unidad!', cls: 'low' }
+        : { text: `Últimas ${stock} unidades`, cls: 'low' };
+    return { text: 'En stock', cls: 'available' };
 }
 
 function renderGallery() {
     const gallery = document.getElementById('gallery');
     if (!gallery) return;
 
-    gallery.innerHTML = tapices.map((tapiz, index) => `
+    gallery.innerHTML = tapices.map((tapiz, index) => {
+        const stockInfo = getStockInfo(tapiz.nombre);
+
+        return `
         <div class="gallery-item" data-index="${index}">
             <div class="gallery-img-wrap">
                 ${index === 0 ? '<span class="badge-bestseller">Más vendido</span>' : ''}
+                ${stockInfo ? `<span class="badge-stock badge-stock--${stockInfo.cls}">${stockInfo.text}</span>` : ''}
                 <img src="${tapiz.img}" alt="${tapiz.nombre}" loading="lazy">
             </div>
             <div class="gallery-info">
@@ -32,12 +47,15 @@ function renderGallery() {
                 <p class="gallery-desc">${tapiz.desc}</p>
                 <p class="gallery-size">${MEDIDAS}</p>
                 <p class="gallery-price">${formatearPrecio(PRECIO)}</p>
-                <a href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hola Tapizate, quiero comprar el tapiz ' + tapiz.nombre)}" target="_blank" rel="noopener" class="buy-link">
-                    <i class="fab fa-whatsapp"></i> Comprar
-                </a>
+                ${stockInfo && stockInfo.cls === 'out'
+                    ? `<span class="buy-link buy-link--disabled"><i class="fab fa-whatsapp"></i> Agotado</span>`
+                    : `<a href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hola Tapizate, quiero comprar el tapiz ' + tapiz.nombre)}" target="_blank" rel="noopener" class="buy-link">
+                        <i class="fab fa-whatsapp"></i> Comprar
+                       </a>`
+                }
             </div>
-        </div>
-    `).join('');
+        </div>`;
+    }).join('');
 
     gallery.querySelectorAll('.gallery-item').forEach((item) => {
         const img = item.querySelector('img');
@@ -48,6 +66,8 @@ function renderGallery() {
 function openLightbox(index) {
     const tapiz = tapices[index];
     if (!tapiz) return;
+
+    const stockInfo = getStockInfo(tapiz.nombre);
 
     const existing = document.querySelector('.lightbox');
     if (existing) existing.remove();
@@ -60,12 +80,16 @@ function openLightbox(index) {
             <img src="${tapiz.img}" alt="${tapiz.nombre}">
             <div class="lightbox-info">
                 <h3>${tapiz.nombre}</h3>
+                ${stockInfo ? `<p class="lightbox-stock lightbox-stock--${stockInfo.cls}">${stockInfo.text}</p>` : ''}
                 <p class="lightbox-desc">${tapiz.desc}</p>
                 <p class="lightbox-size">${MEDIDAS}</p>
                 <p class="lightbox-price">${formatearPrecio(PRECIO)}</p>
-                <a href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hola Tapizate, quiero comprar el tapiz ' + tapiz.nombre)}" target="_blank" rel="noopener" class="lightbox-buy">
-                    <i class="fab fa-whatsapp"></i> Comprar
-                </a>
+                ${stockInfo && stockInfo.cls === 'out'
+                    ? `<span class="lightbox-buy lightbox-buy--disabled"><i class="fab fa-whatsapp"></i> Agotado</span>`
+                    : `<a href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hola Tapizate, quiero comprar el tapiz ' + tapiz.nombre)}" target="_blank" rel="noopener" class="lightbox-buy">
+                        <i class="fab fa-whatsapp"></i> Comprar
+                       </a>`
+                }
             </div>
         </div>
     `;
@@ -91,4 +115,17 @@ if (menuToggle && nav) {
     });
 }
 
-document.addEventListener('DOMContentLoaded', renderGallery);
+async function cargarInventario() {
+    try {
+        const res = await fetch('inventario.json');
+        const data = await res.json();
+        data.forEach(item => inventario.set(item.nombre, item.stock));
+    } catch {
+        // Sin inventario: todo se muestra normal, sin badges de stock
+    }
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+    await cargarInventario();
+    renderGallery();
+});
