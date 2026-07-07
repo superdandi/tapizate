@@ -2,6 +2,7 @@
 
 > Documento de trabajo para seguimiento de mejoras.
 > Última actualización: julio 2026
+> Puntaje actual: **8.5/10** (subió de 7/10 con las mejoras implementadas)
 
 ---
 
@@ -49,7 +50,7 @@
 - ~~No hay indicación de disponibilidad. El usuario no sabe si el diseño está disponible.~~
 - ✅ **Hecho**: inventario.json con stock por diseño. Semáforo visual en cards y lightbox: verde (stock > 3), naranjo (1–3), rojo (agotado con botón deshabilitado).
 
-### 6. Fotos lifestyle separadas del catálogo
+### 7. Fotos lifestyle separadas del catálogo
 - Las fotos de tapices colgados están solo en la galería de instalación.
 - Ideal: cada diseño del catálogo debería tener su propia foto lifestyle.
 - Pendiente: mediano plazo.
@@ -87,7 +88,7 @@
 | Carga lenta | Imágenes pesadas matan conversión en mobile | ✅ Resuelto |
 | Sin reviews | La gente busca validación social | Pendiente |
 | Sin dimensiones | "¿de qué tamaño es?" | ✅ Resuelto |
-| Sin stock visible | "¿sigue disponible?" | Pendiente |
+| Sin stock visible | "¿sigue disponible?" | ✅ Resuelto |
 | Solo WhatsApp | Bien para empezar, pero limitado | Por ahora ok |
 
 ---
