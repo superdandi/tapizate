@@ -296,40 +296,41 @@ body {
     opacity: 0.85;
 }
 
-/* Section divider */
+/* Section divider - banda decorativa geométrica */
 .section-divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    padding: 0 24px;
-    height: 48px;
+    height: 28px;
+    position: relative;
     background: var(--color-bg);
 }
 
-.section-divider--alt {
-    background: var(--color-bg-alt);
+.section-divider::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        repeating-linear-gradient(90deg, transparent 0, transparent 10px, var(--color-primary) 10px, var(--color-primary) 12px),
+        repeating-linear-gradient(0deg, transparent 0, transparent 10px, var(--color-primary) 10px, var(--color-primary) 12px);
+    background-size: 12px 12px;
+    opacity: 0.12;
 }
 
-.section-divider--white {
-    background: var(--color-white);
+.section-divider--alt::before {
+    background:
+        repeating-linear-gradient(90deg, transparent 0, transparent 10px, var(--color-primary) 10px, var(--color-primary) 12px),
+        repeating-linear-gradient(0deg, transparent 0, transparent 10px, var(--color-primary) 10px, var(--color-primary) 12px);
+    background-size: 12px 12px;
+    opacity: 0.12;
 }
 
-.section-divider .divider-line {
-    flex: 1;
-    max-width: 120px;
-    height: 1px;
-    background: var(--color-primary);
-    opacity: 0.15;
+.section-divider--white::before {
+    background:
+        repeating-linear-gradient(90deg, transparent 0, transparent 10px, var(--color-primary) 10px, var(--color-primary) 12px),
+        repeating-linear-gradient(0deg, transparent 0, transparent 10px, var(--color-primary) 10px, var(--color-primary) 12px);
+    background-size: 12px 12px;
+    opacity: 0.12;
 }
 
-.section-divider img {
-    width: 20px;
-    height: auto;
-    opacity: 0.3;
-}
-
-/* Pattern overlay */
+/* Pattern overlay - textura geométrica textil india */
 .section--pattern {
     position: relative;
 }
@@ -341,12 +342,28 @@ body {
     z-index: 0;
     pointer-events: none;
     background-image:
-        linear-gradient(45deg, var(--color-primary) 1px, transparent 1px),
-        linear-gradient(-45deg, var(--color-primary) 1px, transparent 1px),
-        radial-gradient(circle at 50% 50%, var(--color-secondary) 1.5px, transparent 1.5px);
-    background-size: 50px 50px, 50px 50px, 50px 50px;
-    background-position: 0 0, 25px 0, 25px 25px;
-    opacity: 0.04;
+        /* Diamond principal */
+        linear-gradient(45deg, transparent 46%, var(--color-primary) 46%, var(--color-primary) 54%, transparent 54%),
+        linear-gradient(-45deg, transparent 46%, var(--color-primary) 46%, var(--color-primary) 54%, transparent 54%),
+        /* Diamond secundario (interior) */
+        linear-gradient(45deg, transparent 47%, var(--color-secondary) 47%, var(--color-secondary) 53%, transparent 53%),
+        linear-gradient(-45deg, transparent 47%, var(--color-secondary) 47%, var(--color-secondary) 53%, transparent 53%),
+        /* Puntos en las esquinas */
+        radial-gradient(circle at 50% 50%, var(--color-primary) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 50% 50%, var(--color-primary) 1px, transparent 1px),
+        /* Bindi central */
+        radial-gradient(circle at 50% 50%, var(--color-secondary) 2px, transparent 2px);
+    background-size:
+        60px 60px, 60px 60px,
+        60px 60px, 60px 60px,
+        60px 60px, 60px 60px,
+        60px 60px;
+    background-position:
+        0 0, 30px 0,
+        0 0, 30px 0,
+        30px 30px, 0 0,
+        30px 30px;
+    opacity: 0.08;
 }
 
 /* Story */
