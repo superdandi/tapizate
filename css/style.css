@@ -154,19 +154,28 @@ body {
     overflow: hidden;
 }
 
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(255, 250, 245, 0.65), rgba(245, 237, 228, 0.75));
+    z-index: 1;
+    pointer-events: none;
+}
+
 .hero-bg {
     position: absolute;
     inset: -30% 0;
-    background:
-        linear-gradient(rgba(255, 250, 245, 0.65), rgba(245, 237, 228, 0.75)),
-        url('../img/hero-bg.jpg') center / cover no-repeat;
+    width: 100%;
+    height: 160%;
+    object-fit: cover;
     z-index: 0;
     will-change: transform;
 }
 
 .hero .container {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     text-align: center;
     padding-top: 80px;
     padding-bottom: 80px;
