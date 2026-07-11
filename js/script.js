@@ -128,4 +128,20 @@ async function cargarInventario() {
 document.addEventListener('DOMContentLoaded', async () => {
     await cargarInventario();
     renderGallery();
+
+    // Parallax suave en el hero
+    const heroBg = document.querySelector('.hero-bg');
+    if (heroBg) {
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const scrolled = window.scrollY;
+                    heroBg.style.transform = `translateY(${scrolled * 0.2}px)`;
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+    }
 });
