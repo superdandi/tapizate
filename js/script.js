@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             if (!ticking) {
                 window.requestAnimationFrame(() => {
                     const scrolled = window.scrollY;
-                    heroBg.style.transform = `translateY(${scrolled * 0.2}px)`;
+                    heroBg.style.transform = `scale(0.85) translateY(${scrolled * 0.2}px)`;
                     ticking = false;
                 });
                 ticking = true;
