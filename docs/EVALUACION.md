@@ -114,7 +114,9 @@ No se está vendiendo "tapices", se está vendiendo "transformar tu espacio por 
 3. ~~Badge "Más vendido" en Ganesha~~ ✅
 4. ~~Rediseñar separadores entre secciones~~ ✅
 5. ~~Inventario con semáforo visual~~ ✅
-6. **Testimonios / validación social** — siguiente mejora grande
-7. **Fotos lifestyle por diseño** — mediano plazo
-8. **FAQ** — descartado por ahora
-9. **Google Analytics o Meta Pixel** — medir qué diseños interesan más
+6. ~~Parallax + zoom hover (paso 4)~~ ✅
+7. ~~Video hero con rotación (paso 2)~~ ✅
+8. **Testimonios / validación social** — siguiente mejora grande
+9. **Fotos lifestyle por diseño** — mediano plazo
+10. **Scroll animations** — mediano plazo
+11. **Google Analytics o Meta Pixel** — medir qué diseños interesan más
