@@ -40,7 +40,7 @@ function renderGallery() {
         const stockInfo = getStockInfo(tapiz.nombre);
 
         return `
-        <div class="gallery-item" data-index="${index}">
+        <div class="gallery-item reveal" data-index="${index}" style="transition-delay: ${(index % 6) * 0.08}s">
             <div class="gallery-img-wrap">
                 ${index === 0 ? '<span class="badge-bestseller">Más vendido</span>' : ''}
                 ${stockInfo ? `<span class="badge-stock badge-stock--${stockInfo.cls}">${stockInfo.text}</span>` : ''}
@@ -129,8 +129,22 @@ async function cargarInventario() {
     }
 }
 
+function initScrollReveal() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal--visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
     await cargarInventario();
     renderGallery();
+    initScrollReveal();
 
 });

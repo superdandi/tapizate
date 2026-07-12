@@ -105,6 +105,7 @@ Recomendación:
 | 9 | Soporte imágenes 1:1 | ✅ | aspect-ratio 3:4 en wrapper, object-fit cover, sin fondo blanco |
 | 10 | Fotos lifestyle instalación | ✅ | 2 nuevas fotos agregadas (total: 8 en galería) |
 | 11 | Testimonios / validación social | ✅ | 4 testimonios reales: Paulo Rebel DJ, hay_un_gato_en_mi_cama, peumaveg, HidalgoBread |
+| 12 | Scroll animations | ✅ | IntersectionObserver + fade/slide-up con stagger delays. Hero con cascada. Respeto prefers-reduced-motion |
 
 ### Cosas que se probaron y descartaron
 - Patrón geométrico textil indio en fondos → ❌ no gustó
@@ -120,7 +121,7 @@ Recomendación:
 |---|---|---|---|
 | 🔴 Alta | **Testimonios / validación social** | ✅ Hecho | 4 testimonios reales con fotos de clientes. Paulo Rebel DJ, hay_un_gato_en_mi_cama, peumaveg, HidalgoBread |
 | 🟡 Media | **Fotos lifestyle por diseño** | Alto (fotografía) | Alto — muestra el producto en contexto |
-| 🟡 Media | **Scroll animations** (entrada suave al hacer scroll) | Bajo | Medio — el sitio se siente más vivo |
+| 🟡 Media | **Scroll animations** (entrada suave al hacer scroll) | ✅ Hecho | IntersectionObserver + fade/slide-up con stagger |
 | 🟢 Baja | **Google Analytics / Meta Pixel** | Bajo | Medio — saber qué diseños interesan |
 | 🟢 Baja | **Notificación de reabastecimiento** (formulario para agotados) | Medio | Bajo — útil cuando haya más volumen |
 | ⚪ Futuro | **FAQ** (lavado, materiales, devoluciones) | Bajo | Medio — reduce preguntas por WhatsApp |
