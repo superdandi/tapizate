@@ -7,6 +7,10 @@ const tapices = [
     { img: 'img/mandala_4879.jpg', nombre: 'Mandala Sol', desc: 'Un diseño que irradia luz, calidez y buena vibra ✨ perfecto para darle vida a tu hogar.' },
     { img: 'img/mandala_4880.jpg', nombre: 'Mandala Elefante', desc: 'Un diseño que representa sabiduría, fuerza y buena fortuna ✨ ideal para espacios que buscan protección y estabilidad.' },
     { img: 'img/mandala_4881.jpg', nombre: 'Mandala Gaja', desc: 'Un diseño que evoca la nobleza y majestuosidad del elefante sagrado ✨ perfecto para quienes buscan un símbolo de poder y equilibrio.' },
+    { img: 'img/mandala-pavo-real.jpg', nombre: 'Mandala Pavo Real', desc: 'Un diseño que evoca la elegancia y el colorido del pavo real 🦚 perfecto para llenar tu espacio de vitalidad y belleza.' },
+    { img: 'img/mandala-marihuana.jpg', nombre: 'Mandala Marihuana', desc: 'Un diseño vibrante con hojas de marihuana entrelazadas 🌿 ideal para espacios libres, creativos y con personalidad.' },
+    { img: 'img/mandala-tibetano.jpg', nombre: 'Mandala Tibetano', desc: 'Un diseño poderoso con simbolismo tibetano ✨ perfecto para espacios de meditación y conexión espiritual.' },
+    { img: 'img/mandala-ging-gang.jpg', nombre: 'Mandala Ging Gang', desc: 'Un diseño audaz con un motivo ging gang central 🌟 ideal para quienes buscan un punto focal lleno de energía.' },
 ];
 
 const PRECIO = 20000;

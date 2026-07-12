@@ -6,5 +6,9 @@
   { "nombre": "Mandala Energía", "stock": 1 },
   { "nombre": "Mandala Sol", "stock": 1 },
   { "nombre": "Mandala Elefante", "stock": 1 },
-  { "nombre": "Mandala Gaja", "stock": 1 }
+  { "nombre": "Mandala Gaja", "stock": 1 },
+  { "nombre": "Mandala Pavo Real", "stock": 0 },
+  { "nombre": "Mandala Marihuana", "stock": 1 },
+  { "nombre": "Mandala Tibetano", "stock": 1 },
+  { "nombre": "Mandala Ging Gang", "stock": 1 }
 ]
